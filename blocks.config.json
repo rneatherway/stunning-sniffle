@@ -1,6 +1,15 @@
 [
   {
     "type": "file",
+    "id": "sarif-file-block",
+    "title": "SARIF Block",
+    "description": "A SARIF file block",
+    "entry": "blocks/sarif-file-block/index.tsx",
+    "matches": ["*.sarif", "*.sarif.json"],
+    "example_path": "https://github.com/microsoft/sarif-tutorials/blob/main/samples/1-Introduction/simple-example.sarif"
+  },
+  {
+    "type": "file",
     "id": "file-block",
     "title": "Example File Block",
     "description": "A basic file block",
