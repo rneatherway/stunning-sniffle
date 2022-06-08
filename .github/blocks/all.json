@@ -1,5 +1,8 @@
 {
   "examples/snippets.sarif": {
     "default": "dsp-testing__stunning-sniffle__sarif-file-block"
+  },
+  "examples/example.sarif": {
+    "default": "dsp-testing__stunning-sniffle__sarif-file-block"
   }
 }
