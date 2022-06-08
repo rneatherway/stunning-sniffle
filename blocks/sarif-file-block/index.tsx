@@ -10,8 +10,8 @@ export default function (props: FileBlockProps) {
   for (const run of JSON.parse(content).runs) {
     for (const result of run.results) {
       const message = result.message.text;
-      for (const location of result.locations) {
-        const codeSnippet = location.physicalLocation.contextRegion.snippet.text;
+      for (const location of result.locations ?? []) {
+        const codeSnippet = location.physicalLocation?.contextRegion?.snippet?.text;
         alerts.push({
           message,
           codeSnippet
@@ -24,9 +24,9 @@ export default function (props: FileBlockProps) {
   return (
     <Box p={4}>
       {
-        alerts.map(a => 
-          <div>
-            <AlertView {...a} />
+        alerts.map((alert, index) => 
+          <div key={index}>
+            <AlertView {...alert} />
             <p></p>
           </div>)
       }
@@ -44,11 +44,11 @@ const AlertView = ({ message, codeSnippet }: Alert) => {
   return (
     <Box>
       <Box className="message">{message}</Box>
-      <Box paddingLeft={3}>
+      {codeSnippet && (<Box paddingLeft={3}>
         <pre className="code-snippet"> 
           {codeSnippet.trim()}
         </pre>
-      </Box>
+      </Box>)}
     </Box>
   );
 }
