@@ -1,3 +1,12 @@
 pre {
   background: papayawhip;
 }
+
+.message {
+  background: papayawhip;
+}
+
+.code-snippet {
+  background: ghostwhite;
+  width: fit-content;
+}
